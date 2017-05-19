@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Practical Test 02 Var 04</string>
+    <string name="port">Port</string>
+    <string name="connect">Start</string>
+    <string name="line">-----------------</string>
+    <string name="client_address">Address</string>
+    <string name="get_http_resource">Get</string>
+
+</resources>
