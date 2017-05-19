@@ -18,7 +18,7 @@ import cz.msebera.android.httpclient.NameValuePair;
 import cz.msebera.android.httpclient.client.HttpClient;
 import cz.msebera.android.httpclient.client.ResponseHandler;
 import cz.msebera.android.httpclient.client.entity.UrlEncodedFormEntity;
-import cz.msebera.android.httpclient.client.methods.HttpPost;
+import cz.msebera.android.httpclient.client.methods.HttpGet;
 import cz.msebera.android.httpclient.impl.client.BasicResponseHandler;
 import cz.msebera.android.httpclient.impl.client.DefaultHttpClient;
 import cz.msebera.android.httpclient.message.BasicNameValuePair;
@@ -64,11 +64,8 @@ public class CommunicationThread extends Thread {
             } else {
                 Log.i(Constants.TAG, "[COMMUNICATION THREAD] Getting the information from the webservice...");
                 HttpClient httpClient = new DefaultHttpClient();
-                HttpPost httpPost = new HttpPost(Constants.WEB_SERVICE_ADDRESS);
-                List<NameValuePair> params = new ArrayList<>();
-                params.add(new BasicNameValuePair(Constants.QUERY_ATTRIBUTE, address));
-                UrlEncodedFormEntity urlEncodedFormEntity = new UrlEncodedFormEntity(params, HTTP.UTF_8);
-                httpPost.setEntity(urlEncodedFormEntity);
+                HttpGet httpPost = new HttpGet(address);
+
                 ResponseHandler<String> responseHandler = new BasicResponseHandler();
                 String pageSourceCode = httpClient.execute(httpPost, responseHandler);
                 if (pageSourceCode == null) {
