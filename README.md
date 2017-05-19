@@ -1,2 +1,2 @@
 # PracticalTest02Var04
-colocviu 2 eim
+Vladulescu Georgiana, 343C1
